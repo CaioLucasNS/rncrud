@@ -5,14 +5,17 @@ import UsersContext from '../context/UsersContext';
 
 function UserList({ navigation }) {
 
-    const { state } = useContext(UsersContext);
+    const { state, dispatch } = useContext(UsersContext);
 
     function confirmUserDelection(user) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
             {
                 text: 'Sim',
                 onPress() {
-                    console.warn(`Delete ${user.id} - ${user.name}`)
+                    dispatch({
+                        type: 'deleteUser', 
+                        payload: user,
+                    })
                 }
             },
             {
