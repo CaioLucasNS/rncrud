@@ -24,6 +24,7 @@ function UserForm({ route, navigation }) {
                 value={user.email}
             />
 
+            {/* TODO: update url avatar */}
             <Text>URL do Avatar</Text>
             <TextInput
                 style={styles.input}
